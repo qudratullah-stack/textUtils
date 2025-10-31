@@ -4,28 +4,14 @@
   box-sizing: border-box;
 }
 
-.parent {
+.parent1 {
   color: white;
   font-size: 30px;
   font-weight: bold;
   margin-top: 0;
   padding: 0;
-  /* background-color: black; */
+  background-color: black;
 }
-h1{
+#h1_contact{
   margin: 0;
-}
-#massage{
-  width: 60vw;
-  margin:10px auto;
-  font-size: 20px;
-  display: block;
-}
-#btn{
-  background-color: rgb(1, 1, 73);
-  color: white;
-  padding: 3px;
-  border-radius: 8px;
-  margin: 8px;
-  
 }

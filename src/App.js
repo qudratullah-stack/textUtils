@@ -1,11 +1,11 @@
 
 import './App.css';
-import Header from './component/Header';
+import Contact from './component/Contact';
 
 function App() {
   return (
     <>
-    <Header title = 'this is the props'/>
+    <Contact qudrat = 'welcome my contact page'/>
     </>
   );
 }
