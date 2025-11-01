@@ -11,8 +11,9 @@ export default function Contact(props) {
     changetext(e.target.value)
   }
   const touppercase = ()=>{
-    changetext.touppercase();
-  }
+    changetext(text.toUpperCase())}
+    const tolowercase = ()=>{
+    changetext(text.toLowerCase())}
   return (
     <>
     <div className="parent1">
@@ -23,7 +24,7 @@ export default function Contact(props) {
     <textarea name="text" id="text" rows={7} value={text} onChange={handlevalue} ></textarea>
       <div className="box1">
       <button id='btn' onClick={touppercase}>Change To Uppercase</button>
-      <button id='btn'>Change To Lowercase</button>
+      <button id='btn' onClick={tolowercase}>Change To Lowercase</button>
       <button id='btn'>Finish Extra Space</button>
       <button id='btn'>Copy</button>
       </div>
