@@ -7,12 +7,16 @@ export default function Contact(props) {
     <div className="parent1">
         <h1>{props.qudrat}</h1>
     </div>
+    <div className="child">
     <p>Inter your Text For Edit</p>
     <textarea name="text" id="text" rows={7}></textarea>
-    <button id='btn'>Change To Uppercase</button>
-    <button id='btn'>Change To Lowercase</button>
-    <button id='btn'>Finish Extra Space</button>
-    <button id='btn'>Copy</button>
+      <div className="box1">
+      <button id='btn'>Change To Uppercase</button>
+      <button id='btn'>Change To Lowercase</button>
+      <button id='btn'>Finish Extra Space</button>
+      <button id='btn'>Copy</button>
+      </div>
+    </div>
     
     </>
   )
