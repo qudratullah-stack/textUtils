@@ -40,7 +40,7 @@ export default function Contact(props) {
     <>
     <div className="parent1" ref={parent_color}>
         <h1>{props.qudrat}</h1>
-       <button id='btn2' onClick={darkmode}>Dark={mode}</button>
+       <button id='btn2' onClick={darkmode}>{mode}</button>
     </div>
     <div className="child">
     <p>Inter your Text For Edit</p>
