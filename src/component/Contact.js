@@ -10,8 +10,11 @@ export default function Contact(props) {
     changetext(text.toUpperCase())}
     const tolowercase = ()=>{
     changetext(text.toLowerCase())}
-  const extraspace = ()=>{
+  const copy = ()=>{
     navigator.clipboard.writeText(textref.current.value);
+  }
+  const extraspace = ()=>{
+    changetext(text.replace(/[ ]+/g,''))
   }
   return (
     <>
@@ -25,7 +28,7 @@ export default function Contact(props) {
       <button id='btn' onClick={touppercase}>Change To Uppercase</button>
       <button id='btn' onClick={tolowercase}>Change To Lowercase</button>
       <button id='btn' onClick={extraspace}>Finish Extra Space</button>
-      <button id='btn'>Copy</button>
+      <button id='btn' onClick={copy}>Copy</button>
       </div>
     </div>
     
