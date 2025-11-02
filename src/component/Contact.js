@@ -4,6 +4,7 @@ export default function Contact(props) {
   const [text, changetext] = useState('')
   const textref = useRef();
   const parent_color = useRef();
+  const pragraph = useRef();
   const handlevalue = (e)=>{
     changetext(e.target.value)
   }
@@ -26,11 +27,13 @@ export default function Contact(props) {
       textref.current.style.backgroundColor = 'gray'
       textref.current.style.color = 'white'
       changemode('white mode')
+      pragraph.current.style.color = 'white'
     }
     else{
       parent_color.current.style.backgroundColor = '#06355cff'
       document.body.style.backgroundColor = 'white'
       textref.current.style.backgroundColor = 'white'
+      pragraph.current.style.color = 'black'
       changemode('Dark Mode')
       
 
@@ -43,8 +46,8 @@ export default function Contact(props) {
        <button id='btn2' onClick={darkmode}>{mode}</button>
     </div>
     <div className="child">
-    <p>Inter your Text For Edit</p>
-    <textarea name="text" id="text" rows={7} ref={textref} value={text} onChange={handlevalue} ></textarea>
+    <p ref={pragraph}>Inter your Text For Edit</p>
+    <textarea name="text" id="text" rows={12} ref={textref} value={text} onChange={handlevalue} ></textarea>
       <div className="box1">
       <button id='btn' onClick={touppercase}>Change To Uppercase</button>
       <button id='btn' onClick={tolowercase}>Change To Lowercase</button>
