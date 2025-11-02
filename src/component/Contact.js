@@ -3,6 +3,7 @@ import React, {useState ,useRef} from 'react'
 export default function Contact(props) {
   const [text, changetext] = useState('')
   const textref = useRef();
+  const parent_color = useRef();
   const handlevalue = (e)=>{
     changetext(e.target.value)
   }
@@ -17,10 +18,20 @@ export default function Contact(props) {
    let newtext = (text.replace(/[ ]+/g,''))
     changetext(newtext.join(' '));
   }
+  
+  const darkmode = ()=>{
+    if(parent_color.current.style.backgroundColor === 'black'){
+      parent_color.current.style.backgroundColor ='grey'
+    }
+    else{
+      parent_color.current.style.backgroundColor = 'black'
+    }
+  }
   return (
     <>
-    <div className="parent1">
+    <div className="parent1" ref={parent_color}>
         <h1>{props.qudrat}</h1>
+       <button id='btn' onClick={darkmode}>Dark Mode</button>
     </div>
     <div className="child">
     <p>Inter your Text For Edit</p>
