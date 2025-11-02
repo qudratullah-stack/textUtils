@@ -14,7 +14,8 @@ export default function Contact(props) {
     navigator.clipboard.writeText(textref.current.value);
   }
   const extraspace = ()=>{
-    changetext(text.replace(/[ ]+/g,''))
+   let newtext = (text.replace(/[ ]+/g,''))
+    changetext(newtext.join(' '));
   }
   return (
     <>
