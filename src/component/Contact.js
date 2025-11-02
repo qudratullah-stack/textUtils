@@ -20,18 +20,25 @@ export default function Contact(props) {
   }
   
   const darkmode = ()=>{
-    if(parent_color.current.style.backgroundColor === 'black'){
-      parent_color.current.style.backgroundColor ='grey'
+    if(parent_color.current.style.backgroundColor === 'gray'){
+      parent_color.current.style.backgroundColor ='#070772ff'
+     document.body.style.backgroundColor = 'white'
+      textref.current.style.backgroundColor = 'white'
     }
     else{
-      parent_color.current.style.backgroundColor = 'black'
+      parent_color.current.style.backgroundColor = 'gray'
+     document.body.style.backgroundColor = '#030342ff'
+      textref.current.style.backgroundColor = 'gray'
+      textref.current.style.color = 'white'
+      
+
     }
   }
   return (
     <>
     <div className="parent1" ref={parent_color}>
         <h1>{props.qudrat}</h1>
-       <button id='btn' onClick={darkmode}>Dark Mode</button>
+       <button id='btn2' onClick={darkmode}>Dark Mode</button>
     </div>
     <div className="child">
     <p>Inter your Text For Edit</p>

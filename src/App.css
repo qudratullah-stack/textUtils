@@ -40,3 +40,16 @@
 #text{
   width: 80%;
 }
+#btn2{
+  background-color: #080866;
+  color: white;
+  height: 30px;
+  border-radius: 15px;
+  padding: 5px;
+  outline: none;
+  border: 1px solid white;
+  cursor: pointer;
+  box-shadow: 0 0 7px rgb(167, 167, 247);
+  width: 7em;
+  margin: auto 10px;
+}
