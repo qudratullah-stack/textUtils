@@ -5,7 +5,7 @@ import Contact from './component/Contact';
 function App() {
   return (
     <>
-    <Contact qudrat = 'welcome my contact page'/>
+    <Contact qudrat = 'Welcome Text Editor app'/>
     </>
   );
 }

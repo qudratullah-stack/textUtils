@@ -42,9 +42,10 @@
 }
 #text{
   width: 80%;
-  border: 1px solid white;
+  border: 1px solid black;
   border-radius: 10px;
   box-shadow: 0 0 10px white;
+  margin-bottom: 10px;
 }
 #btn2{
   background-color: #080866;
