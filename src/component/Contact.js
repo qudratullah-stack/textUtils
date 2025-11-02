@@ -18,18 +18,20 @@ export default function Contact(props) {
    let newtext = (text.replace(/[ ]+/g,''))
     changetext(newtext.join(' '));
   }
-  
+  const [mode, changemode] = useState('')
   const darkmode = ()=>{
-    if(parent_color.current.style.backgroundColor === 'gray'){
-      parent_color.current.style.backgroundColor ='#070772ff'
-     document.body.style.backgroundColor = 'white'
-      textref.current.style.backgroundColor = 'white'
-    }
-    else{
-      parent_color.current.style.backgroundColor = 'gray'
-     document.body.style.backgroundColor = '#030342ff'
+    if(parent_color.current.style.backgroundColor === 'rgb(14, 14, 94)'){
+      parent_color.current.style.backgroundColor ='#0d0da1ff'
+     document.body.style.backgroundColor = '#030338ff'
       textref.current.style.backgroundColor = 'gray'
       textref.current.style.color = 'white'
+      changemode('white mode')
+    }
+    else{
+      parent_color.current.style.backgroundColor = '#06355cff'
+      document.body.style.backgroundColor = 'white'
+      textref.current.style.backgroundColor = 'white'
+      changemode('Dark Mode')
       
 
     }
@@ -38,7 +40,7 @@ export default function Contact(props) {
     <>
     <div className="parent1" ref={parent_color}>
         <h1>{props.qudrat}</h1>
-       <button id='btn2' onClick={darkmode}>Dark Mode</button>
+       <button id='btn2' onClick={darkmode}>Dark={mode}</button>
     </div>
     <div className="child">
     <p>Inter your Text For Edit</p>

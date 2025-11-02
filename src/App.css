@@ -10,7 +10,10 @@
   font-weight: bold;
   margin-top: 0;
   padding: 10px;
-  background-color: black;}
+  background-color:rgb(14, 14, 94);
+  display: flex;
+  justify-content: space-between;
+}
 #btn{
   background-color: #080866;
   color: white;
