@@ -18,11 +18,11 @@ export default function Contact(props) {
    let newtext = (text.replace(/[ ]+/g,''))
     changetext(newtext.join(' '));
   }
-  const [mode, changemode] = useState('')
+  const [mode, changemode] = useState('Dark Mode')
   const darkmode = ()=>{
-    if(parent_color.current.style.backgroundColor === 'rgb(14, 14, 94)'){
+    if(mode ==="Dark Mode"){
       parent_color.current.style.backgroundColor ='#0d0da1ff'
-     document.body.style.backgroundColor = '#030338ff'
+      document.body.style.backgroundColor = '#030338ff'
       textref.current.style.backgroundColor = 'gray'
       textref.current.style.color = 'white'
       changemode('white mode')
