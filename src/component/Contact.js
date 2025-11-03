@@ -17,8 +17,8 @@ export default function Contact(props) {
     navigator.clipboard.writeText(textref.current.value);
   }
   const extraspace = ()=>{
-   let newtext = (text.replace(/[ ]+/g,' '))
-    changetext(newtext.join(' '));
+   let newtext = text.replace(/[ ]+/g," ")
+    changetext(newtext)
   }
   const [mode, changemode] = useState('Dark Mode')
   const darkmode = ()=>{
