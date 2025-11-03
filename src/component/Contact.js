@@ -2,7 +2,7 @@ import React, {useState ,useRef} from 'react'
 
 export default function Contact(props) {
   const [text, changetext] = useState('')
-  
+  const [massage, changemassage] = useState('')
   const textref = useRef();
   const parent_color = useRef();
   const pragraph = useRef();
@@ -10,15 +10,21 @@ export default function Contact(props) {
     changetext(e.target.value)
   }
   const touppercase = ()=>{
-    changetext(text.toUpperCase())}
+    changetext(text.toUpperCase())
+    changemassage('Text Change into Uppercase')
+  }
     const tolowercase = ()=>{
-    changetext(text.toLowerCase())}
+    changetext(text.toLowerCase())
+    changemassage('Text Change into Lowercase')
+  }
   const copy = ()=>{
     navigator.clipboard.writeText(textref.current.value);
+    changemassage('Text Copied')
   }
   const extraspace = ()=>{
    let newtext = text.replace(/[ ]+/g," ")
     changetext(newtext)
+    changemassage('Finish Extra Space')
   }
   const [mode, changemode] = useState('Dark Mode')
   const darkmode = ()=>{
@@ -29,10 +35,12 @@ export default function Contact(props) {
       textref.current.style.color = 'white'
       changemode('white mode')
       pragraph.current.style.color = 'white'
+      changemassage('You Add Dark Mode')
     }
     else{
       parent_color.current.style.backgroundColor = '#06355cff'
       document.body.style.backgroundColor = 'white'
+      textref.current.style.color = 'black'
       textref.current.style.backgroundColor = 'white'
       pragraph.current.style.color = 'black'
       changemode('Dark Mode')
@@ -46,6 +54,7 @@ export default function Contact(props) {
         <h1>{props.qudrat}</h1>
        <button id='btn2' onClick={darkmode}>{mode}</button>
     </div>
+    <div className="alert">{massage}</div>
     <div className="child">
     <p ref={pragraph} id='p1'>Inter your Text For Edit</p>
     <textarea name="text" id="text" rows={12} ref={textref} value={text} onChange={handlevalue} ></textarea>

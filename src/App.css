@@ -70,3 +70,16 @@
   width: 10em;
   margin: auto 10px;
 }
+.alert{
+  width: 50vw;
+  height: 100px;
+  background-color: rgb(98, 241, 98);
+  color:#3f2697;
+  font-size: 25px;
+  font-weight: bold;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgb(33, 163, 33);
+  margin: 10px auto;
+  padding: 10px;
+  text-align: center;
+}
