@@ -2,6 +2,7 @@ import React, {useState ,useRef} from 'react'
 
 export default function Contact(props) {
   const [text, changetext] = useState('')
+  
   const textref = useRef();
   const parent_color = useRef();
   const pragraph = useRef();
@@ -16,7 +17,7 @@ export default function Contact(props) {
     navigator.clipboard.writeText(textref.current.value);
   }
   const extraspace = ()=>{
-   let newtext = (text.replace(/[ ]+/g,''))
+   let newtext = (text.replace(/[ ]+/g,' '))
     changetext(newtext.join(' '));
   }
   const [mode, changemode] = useState('Dark Mode')
@@ -46,7 +47,7 @@ export default function Contact(props) {
        <button id='btn2' onClick={darkmode}>{mode}</button>
     </div>
     <div className="child">
-    <p ref={pragraph}>Inter your Text For Edit</p>
+    <p ref={pragraph} id='p1'>Inter your Text For Edit</p>
     <textarea name="text" id="text" rows={12} ref={textref} value={text} onChange={handlevalue} ></textarea>
       <div className="box1">
       <button id='btn' onClick={touppercase}>Change To Uppercase</button>
