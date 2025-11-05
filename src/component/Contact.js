@@ -1,5 +1,7 @@
 import React, {useState ,useRef} from 'react'
+import { BrowserRouter,Routes,Route,Link } from 'react-router-dom';
 
+import About from './About';
 export default function Contact(props) {
   const [text, changetext] = useState('')
   const [massage, changemassage] = useState('')
@@ -8,23 +10,36 @@ export default function Contact(props) {
   const pragraph = useRef();
   const handlevalue = (e)=>{
     changetext(e.target.value)
+    
   }
   const touppercase = ()=>{
     changetext(text.toUpperCase())
     changemassage('Text Change into Uppercase')
+    setTimeout(() => {
+      changemassage('')
+    }, 2000);
   }
     const tolowercase = ()=>{
     changetext(text.toLowerCase())
     changemassage('Text Change into Lowercase')
+    setTimeout(() => {
+      changemassage('')
+    }, 2000);
   }
   const copy = ()=>{
     navigator.clipboard.writeText(textref.current.value);
     changemassage('Text Copied')
+    setTimeout(() => {
+      changemassage('')
+    }, 2000);
   }
   const extraspace = ()=>{
    let newtext = text.replace(/[ ]+/g," ")
     changetext(newtext)
     changemassage('Finish Extra Space')
+    setTimeout(() => {
+      changemassage('')
+    }, 2000);
   }
   const [mode, changemode] = useState('Dark Mode')
   const darkmode = ()=>{
@@ -36,6 +51,9 @@ export default function Contact(props) {
       changemode('white mode')
       pragraph.current.style.color = 'white'
       changemassage('You Add Dark Mode')
+      setTimeout(() => {
+      changemassage('')
+    }, 2000);
     }
     else{
       parent_color.current.style.backgroundColor = '#06355cff'
@@ -44,7 +62,10 @@ export default function Contact(props) {
       textref.current.style.backgroundColor = 'white'
       pragraph.current.style.color = 'black'
       changemode('Dark Mode')
-      
+      changemassage('You Add Light Mode')
+      setTimeout(() => {
+      changemassage('')
+    }, 2000);
 
     }
   }
@@ -52,9 +73,18 @@ export default function Contact(props) {
     <>
     <div className="parent1" ref={parent_color}>
         <h1>{props.qudrat}</h1>
+        <BrowserRouter>
+        <nav>
+          <Link to ="/About">About</Link>
+        </nav>
+        <Routes>
+          <Route path='/About' element = {<About/>} />
+        </Routes>
+        </BrowserRouter>
+        
        <button id='btn2' onClick={darkmode}>{mode}</button>
     </div>
-    <div className="alert">{massage}</div>
+   {massage && <div className="alert">{massage}</div>}
     <div className="child">
     <p ref={pragraph} id='p1'>Inter your Text For Edit</p>
     <textarea name="text" id="text" rows={12} ref={textref} value={text} onChange={handlevalue} ></textarea>
