@@ -1,6 +1,6 @@
 // import { useState } from "react"
 import React, {useState} from 'react'
-
+import { Link } from "react-router-dom";
 export default function Header(props) {
   const [text , setText] = useState('')
   const handleOnChange = (e)=>{
@@ -39,6 +39,10 @@ export default function Header(props) {
      
        <div className="parent" style={allStayle}>
        <h1>{props.title}</h1>
+       <nav>
+          <Link to="/">Contact</Link>
+          <Link to="/about">About</Link>
+        </nav>
      </div>
        <button id='btn' onClick={handleUpClick}>click</button>
       <textarea name="massage" id="massage" value={text} onChange={handleOnChange} rows='7' placeholder='texthere'></textarea>
