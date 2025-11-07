@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { Link } from "react-router-dom";
+
 
 export default function Contact(props) {
   const [text, changetext] = useState("");
@@ -34,7 +34,7 @@ export default function Contact(props) {
   const extraspace = () => {
     let newtext = text.replace(/[ ]+/g, " ");
     changetext(newtext);
-    changemassage("Finish Extra Space");
+    changemassage("Finished Extra Space");
     setTimeout(() => {
       changemassage("");
     }, 2000);
@@ -42,11 +42,11 @@ export default function Contact(props) {
   const [mode, changemode] = useState("Dark Mode");
   const darkmode = () => {
     if (mode === "Dark Mode") {
-      parent_color.current.style.backgroundColor = "#0d0da1ff";
+      parent_color.current.style.backgroundColor = "rgb(12, 68, 96)";
       document.body.style.backgroundColor = "#030338ff";
-      textref.current.style.backgroundColor = "gray";
+      textref.current.style.backgroundColor = "#adb3d2";
       textref.current.style.color = "white";
-      changemode("white mode");
+      changemode("Light mode");
       pragraph.current.style.color = "white";
       changemassage("You Add Dark Mode");
       setTimeout(() => {
@@ -65,30 +65,43 @@ export default function Contact(props) {
       }, 2000);
     }
   };
+  const bold_text = ()=>{
+    let bold = textref.current.value= ' bold';
+    changetext(bold)
+  }
+  const clear_txt =()=>{
+    changetext('')
+    changemassage('Text Cleared')
+    setTimeout(() => {
+        changemassage("");
+      }, 2000);
+  }
   return (
     <>
       <div className="parent1" ref={parent_color}>
-        <h1>{props.qudrat}</h1>
-
-        <nav>
-          <Link to="/header">Header</Link>
-          <Link to="/about">About</Link>
-        </nav>
-        
-
+        <div className="first_child">
+          <p id="icon">T</p>
+          <p id="parent_txet">Welcome TextUtils</p>
+        </div>
         <button id="btn2" onClick={darkmode}>
           {mode}
         </button>
       </div>
-      {massage && <div className="alert">{massage}</div>}
+      <div className="massage_parent">
+        {massage && <div className="alert">{massage}</div>}
+      </div>
       <div className="child">
-        <p ref={pragraph} id="p1">
-          Inter your Text For Edit
-        </p>
+        <h1 ref={pragraph}>{props.h1_text}</h1>
+        <div className="box1">
+        <button id="btn2" onClick={bold_text}>Bold</button>
+        <button id="btn2">Italic</button>
+        <button id="btn2" onClick={clear_txt}>Clear Text</button>
+        <button id="btn2"></button>
+        </div>
         <textarea
           name="text"
           id="text"
-          rows={12}
+          rows={8}
           ref={textref}
           value={text}
           onChange={handlevalue}
