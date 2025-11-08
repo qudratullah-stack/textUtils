@@ -1,84 +1,81 @@
 import React, { useState, useRef } from "react";
 
-
 export default function Contact(props) {
-  const [text, changetext] = useState("");
-  const [massage, changemassage] = useState("");
+  const [text, settext] = useState("");
+  const [massage, setmassage] = useState("");
   const textref = useRef();
-  const parent_color = useRef();
-  const pragraph = useRef();
+  
   const handlevalue = (e) => {
-    changetext(e.target.value);
+    settext(e.target.value);
   };
   const touppercase = () => {
-    changetext(text.toUpperCase());
-    changemassage("Text Change into Uppercase");
+    settext(text.toUpperCase());
+    setmassage("Text Change into Uppercase");
+
     setTimeout(() => {
-      changemassage("");
+      setmassage("");
     }, 2000);
   };
   const tolowercase = () => {
-    changetext(text.toLowerCase());
-    changemassage("Text Change into Lowercase");
+    settext(text.toLowerCase());
+    setmassage("Text Change into Lowercase");
     setTimeout(() => {
-      changemassage("");
+      setmassage("");
     }, 2000);
   };
   const copy = () => {
     navigator.clipboard.writeText(textref.current.value);
-    changemassage("Text Copied");
+    setmassage("Text Copied");
     setTimeout(() => {
-      changemassage("");
+      setmassage("");
     }, 2000);
   };
   const extraspace = () => {
     let newtext = text.replace(/[ ]+/g, " ");
-    changetext(newtext);
-    changemassage("Finished Extra Space");
+    settext(newtext);
+    setmassage("Finished Extra Space");
     setTimeout(() => {
-      changemassage("");
+      setmassage("");
     }, 2000);
   };
-  const [mode, changemode] = useState("Dark Mode");
+  const [dark, setDark] = useState(true);
   const darkmode = () => {
-    if (mode === "Dark Mode") {
-      parent_color.current.style.backgroundColor = "rgb(12, 68, 96)";
-      document.body.style.backgroundColor = "#030338ff";
-      textref.current.style.backgroundColor = "#adb3d2";
-      textref.current.style.color = "white";
-      changemode("Light mode");
-      pragraph.current.style.color = "white";
-      changemassage("You Add Dark Mode");
-      setTimeout(() => {
-        changemassage("");
-      }, 2000);
-    } else {
-      parent_color.current.style.backgroundColor = "#06355cff";
-      document.body.style.backgroundColor = "white";
-      textref.current.style.color = "black";
-      textref.current.style.backgroundColor = "white";
-      pragraph.current.style.color = "black";
-      changemode("Dark Mode");
-      changemassage("You Add Light Mode");
-      setTimeout(() => {
-        changemassage("");
-      }, 2000);
+    setDark(!dark)
     }
-  };
-  const bold_text = ()=>{
-    let bold = textref.current.value= ' bold';
-    changetext(bold)
-  }
-  const clear_txt =()=>{
-    changetext('')
-    changemassage('Text Cleared')
+  
+  const [isbold, changebold] = useState(false);
+  const bold_text = () => {
+    changebold(!isbold);
+    setmassage("Text Size Changed");
     setTimeout(() => {
-        changemassage("");
-      }, 2000);
-  }
+      setmassage("");
+    }, 2000);
+  };
+  const [isitalic, changeitalic] = useState(false);
+  const italic_txt = () => {
+    changeitalic(!isitalic);
+    setmassage("Text style Changed");
+    setTimeout(() => {
+      setmassage("");
+    }, 2000);
+  };
+  const clear_txt = () => {
+    settext("");
+    setmassage("Text Cleared");
+    setTimeout(() => {
+      setmassage("");
+    }, 2000);
+  };
+  const reverse = () => {
+    settext(text.split("").reverse().join(""));
+    setmassage("Text Reversed");
+    setTimeout(() => {
+      setmassage("");
+    }, 2000);
+  };
   return (
     <>
-      <div className="parent1" ref={parent_color}>
+      <div className={dark === dark? light: dark} >
         <div className="first_child">
           <p id="icon">T</p>
           <p id="parent_txet">Welcome TextUtils</p>
@@ -91,12 +88,20 @@ export default function Contact(props) {
         {massage && <div className="alert">{massage}</div>}
       </div>
       <div className="child">
-        <h1 ref={pragraph}>{props.h1_text}</h1>
+        <h1 >{props.h1_text}</h1>
         <div className="box1">
-        <button id="btn2" onClick={bold_text}>Bold</button>
-        <button id="btn2">Italic</button>
-        <button id="btn2" onClick={clear_txt}>Clear Text</button>
-        <button id="btn2"></button>
+          <button id="btn2" onClick={bold_text}>
+            Bold
+          </button>
+          <button id="btn2" onClick={italic_txt}>
+            Italic
+          </button>
+          <button id="btn2" onClick={clear_txt}>
+            Clear Text
+          </button>
+          <button id="btn2" onClick={reverse}>
+            Reverse
+          </button>
         </div>
         <textarea
           name="text"
@@ -105,6 +110,10 @@ export default function Contact(props) {
           ref={textref}
           value={text}
           onChange={handlevalue}
+          style={{
+            fontWeight: isbold ? "bolder" : "normal",
+            fontStyle: isitalic ? "italic" : "inherit",
+          }}
         ></textarea>
         <div className="box1">
           <button id="btn" onClick={touppercase}>
@@ -120,6 +129,18 @@ export default function Contact(props) {
             Copy
           </button>
         </div>
+      </div>
+      <div className="second_child">
+        <p >
+          {text.trim().length === 0 ? 0 : text.trim().split(/\s+/).length}
+          Words And {text.replace(/\s/g, '').length} Characters
+        </p>
+        <p >
+          Read Time{" "}
+          {text.split(/\s+/).filter((element) => {
+            return element !== 0;
+          }).length * 0.008}
+        </p>
       </div>
     </>
   );

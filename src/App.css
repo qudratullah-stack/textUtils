@@ -33,7 +33,7 @@
   flex-direction: column;
   text-align: center;
 }
-h1{
+h1 {
   font-size: 30px;
 }
 .box1 {
@@ -114,22 +114,35 @@ h1{
   height: 100%;
   display: flex;
   justify-content: start;
-  
 }
 #parent_txet {
   margin: auto 10px;
   font-size: 35px;
+}
+.second_child{
+  width: 40vw;
+  height: 70px;
+  border-radius: 15px;
+  padding: 10px;
+  text-align: center;
+  background: none;
+  box-shadow: 0 0 8px;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 3px auto 10px auto;
+  border-left: 8px solid white;
+  border-right: 8px solid white;
+  
 }
 @media (max-width: 450px) {
   #btn2 {
     width: 8em;
   }
   #parent_txet {
-margin: auto 4px;
-  font-size: 20px;
+    margin: auto 10px;
+    font-size: 20px;
   }
- 
-  
+
   .first_child {
     width: 300px;
   }
@@ -156,6 +169,9 @@ margin: auto 4px;
   .massage_parent {
     height: 90px;
   }
+  .second_child{
+  width: 90vw;
+  }
 }
 @media (min-width: 450px) and (max-width: 800px) {
   .first_child {
@@ -165,14 +181,16 @@ margin: auto 4px;
     justify-content: start;
   }
   #parent_txet {
-margin: auto 7px;
-  font-size: 20px;
+    margin: auto 7px;
+    font-size: 20px;
   }
   #text {
     max-height: 250px;
   }
- h1 {
+  h1 {
     font-size: 25px;
   }
-  
+   .second_child{
+  width: 70vw;
+  }
 }
