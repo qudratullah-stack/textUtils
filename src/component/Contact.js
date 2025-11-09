@@ -38,9 +38,19 @@ export default function Contact(props) {
       setmassage("");
     }, 2000);
   };
-  const [dark, setDark] = useState(true);
-  const darkmode = () => {
-    setDark(!dark)
+  const [mode_txt, setmode_txt] = useState("Light Mode");
+  const [dark, setdark]= useState(false)
+  const handleMode = () => {
+    setdark(!dark)
+    if(dark){
+
+      document.body.style.backgroundColor = 'rgba(244, 248, 248, 1)'
+    }
+    else{
+      setmode_txt('Dark Mode')
+      document.body.style.backgroundColor = '#121212'
+
+    }
     }
   
   const [isbold, changebold] = useState(false);
@@ -75,13 +85,14 @@ export default function Contact(props) {
   };
   return (
     <>
-      <div className={dark === dark? light: dark} >
+      <div className={dark ?'mode_dark':'light'} >
+      <div className="navbar">
         <div className="first_child">
           <p id="icon">T</p>
           <p id="parent_txet">Welcome TextUtils</p>
         </div>
-        <button id="btn2" onClick={darkmode}>
-          {mode}
+        <button id="btn2" onClick={handleMode}>
+          {mode_txt}
         </button>
       </div>
       <div className="massage_parent">
@@ -141,6 +152,7 @@ export default function Contact(props) {
             return element !== 0;
           }).length * 0.008}
         </p>
+      </div>
       </div>
     </>
   );
