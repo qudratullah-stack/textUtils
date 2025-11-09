@@ -3,13 +3,13 @@
   padding: 0;
   box-sizing: border-box;
 }
-.mode_dark{
+.mode_dark {
   color: white;
 }
-.light{
+.light {
   color: black;
 }
-.light .second_child{
+.light .second_child {
   border-left: 4px solid black;
   border-right: 4px solid black;
 }
@@ -23,8 +23,8 @@
   display: flex;
   justify-content: space-between;
 }
-.mode_dark .navbar{
- color: white;
+.mode_dark .navbar {
+  color: white;
   font-size: 30px;
   font-weight: bold;
   padding: 10px;
@@ -32,7 +32,7 @@
   display: flex;
   justify-content: space-between;
 }
-.mode_dark #text{
+.mode_dark #text {
   background-color: #4f4c4c;
   color: white;
   border: 1px solid white;
@@ -85,7 +85,7 @@ h1 {
   margin: 5px auto;
 }
 #primary_btn {
-  background-color:#053070;
+  background-color: #053070;
   color: white;
   height: 30px;
   border-radius: 15px;
@@ -144,7 +144,7 @@ h1 {
   margin: auto 10px;
   font-size: 35px;
 }
-.second_child{
+.second_child {
   width: 40vw;
   height: 70px;
   border-radius: 15px;
@@ -157,11 +157,11 @@ h1 {
   margin: 3px auto 10px auto;
   border-left: 8px solid white;
   border-right: 8px solid white;
-  
 }
 @media (max-width: 450px) {
-  #secondry_btn {
-    width: 9em;
+  
+    #secondry_btn {
+    width: 12em;
   }
   #parent_txet {
     margin: auto 10px;
@@ -194,8 +194,8 @@ h1 {
   .massage_parent {
     height: 90px;
   }
-  .second_child{
-  width: 90vw;
+  .second_child {
+    width: 90vw;
   }
 }
 @media (min-width: 450px) and (max-width: 800px) {
@@ -215,7 +215,7 @@ h1 {
   h1 {
     font-size: 25px;
   }
-   .second_child{
-  width: 70vw;
+  .second_child {
+    width: 70vw;
   }
 }
