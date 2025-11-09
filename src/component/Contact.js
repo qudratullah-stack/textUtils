@@ -139,7 +139,7 @@ export default function Contact(props) {
               Change To Lowercase
             </button>
             <button id="secondry_btn" onClick={extraspace}>
-              Finish Extra Space
+              Finish Extra Spaces
             </button>
             <button id="secondry_btn" onClick={copy}>
               Copy
@@ -153,9 +153,9 @@ export default function Contact(props) {
           </p>
           <p>
             Read Time{" "}
-            {text.split(/\s+/).filter((element) => {
+            {(text.split(/\s+/).filter((element) => {
               return element !== 0;
-            }).length * 0.008}
+            }).length * 0.008).toFixed(2)}
           </p>
         </div>
       </div>
