@@ -9,6 +9,10 @@
 .light{
   color: black;
 }
+.light .second_child{
+  border-left: 4px solid black;
+  border-right: 4px solid black;
+}
 
 .light .navbar {
   color: white;
@@ -34,7 +38,7 @@
   border: 1px solid white;
 }
 
-#btn {
+#secondry_btn {
   background-color: #053070;
   color: white;
   height: 30px;
@@ -80,7 +84,7 @@ h1 {
   font-weight: bold;
   margin: 5px auto;
 }
-#btn2 {
+#primary_btn {
   background-color:#053070;
   color: white;
   height: 30px;
@@ -147,7 +151,7 @@ h1 {
   padding: 10px;
   text-align: center;
   background: none;
-  box-shadow: 0 0 8px;
+  box-shadow: 0 0 4px;
   font-size: 20px;
   font-weight: 600;
   margin: 3px auto 10px auto;
@@ -156,8 +160,8 @@ h1 {
   
 }
 @media (max-width: 450px) {
-  #btn2 {
-    width: 8em;
+  #secondry_btn {
+    width: 9em;
   }
   #parent_txet {
     margin: auto 10px;
@@ -173,7 +177,7 @@ h1 {
   .box1 {
     width: 100%;
   }
-  #btn {
+  #primary_btn {
     width: 8em;
     height: 3.3em;
     padding: 5px;
