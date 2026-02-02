@@ -3,7 +3,7 @@
 A powerful and user-friendly web utility built with **React.js** designed to manipulate and analyze text in real-time. Whether you need to change text casing, remove unnecessary spaces, or get instant word statistics, TextUtils provides a fast and efficient solution.
 
 ## 🚀 Live Demo
-[Your Vercel Link Here]
+[https://text-utils-rho-seven.vercel.app/]
 
 ## ✨ Key Features
 * **Text Transformation**: Convert text to Uppercase, Lowercase, and Bold/Italic styles instantly.
