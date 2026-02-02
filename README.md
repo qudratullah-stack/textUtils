@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# TextUtils - Smart Text Processor
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A powerful and user-friendly web utility built with **React.js** designed to manipulate and analyze text in real-time. Whether you need to change text casing, remove unnecessary spaces, or get instant word statistics, TextUtils provides a fast and efficient solution.
 
-## Available Scripts
+## 🚀 Live Demo
+[Your Vercel Link Here]
 
-In the project directory, you can run:
+## ✨ Key Features
+* **Text Transformation**: Convert text to Uppercase, Lowercase, and Bold/Italic styles instantly.
+* **Text Cleaning**: Remove extra white spaces and clear text with a single click.
+* **Smart Word Counter**: Accurate real-time word and character counting using Regex.
+* **Reading Time Estimator**: Automatically calculates the average time required to read the text.
+* **One-Click Copy**: Integrated Clipboard API to copy processed text easily.
+* **Dark Mode**: Optimized UI with a toggleable Dark/Light theme for better readability.
 
-### `npm start`
+## 🛠️ Tech Stack
+* **Frontend**: React.js
+* **Build Tool**: Vite
+* **Styling**: CSS3 / Bootstrap
+* **Deployment**: Vercel
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🧩 Challenges & Solutions
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 1. Accurate Word Counting
+**Problem**: Standard string splitting was counting extra spaces and new lines as words, giving incorrect statistics.
+**Solution**: Implemented a filtering logic using Regular Expressions `text.split(/\s+/)` to ensure only non-empty strings are counted as valid words.
 
-### `npm test`
+### 2. Clipboard Integration
+**Problem**: Users needed a quick way to copy the transformed text without manual selection.
+**Solution**: Integrated the `navigator.clipboard.writeText` API combined with a custom Alert system to provide instant feedback upon successful copying.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 3. Extra Space Removal
+**Problem**: Removing internal multiple spaces without affecting single spaces between words.
+**Solution**: Used a Regex-based replace method to detect and collapse multiple consecutive spaces into a single space.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📥 Getting Started
+1. Clone the repository:
+   `git clone https://github.com/qudratullah-stack/textUtils.git`
+2. Install dependencies:
+   `npm install`
+3. Start the application:
+   `npm run dev`
